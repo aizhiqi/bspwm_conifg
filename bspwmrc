@@ -4,7 +4,7 @@ sh $HOME/.config/bspwm/scripts/autostart.sh
 bspc monitor -d 1 2 3 4 5
 
 bspc config border_width         3
-bspc config window_gap           10
+bspc config window_gap           3
 bspc config focus_follows_pointer true
 bspc config ignore_ewmh_focus true
 
@@ -20,4 +20,4 @@ bspc config paddingless_monocle      true
 unclutter --ignore-scrooling &
 
 bspc rule -a Thunar state=floating
-bspc rule -a google-chrome-stable desktop='^2'
+bspc rule -a Google-chrome desktop='^2'

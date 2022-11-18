@@ -14,11 +14,12 @@ export XMODIFIERS=@im=fcitx
 
 picom --config ~/.config/bspwm/picom/picom.conf &
 
-arr=("copyq" "fcitx" "xdman" "redshift-gtk" "picom" "conky"\
+arr=("copyq" "fcitx" "xdman" "picom"\
 	"~/.config/bspwm/bin/bspbar"\
 	"~/.config/bspwm/bin/bsphotkey"\
 	"~/.config/bspwm/bin/bspnotifier"\
 	"~/.config/bspwm/bin/bspwallpaper"\
+	"~/.config/bspwm/bin/bspautolight"\
 )
 
 for value in ${arr[@]}
