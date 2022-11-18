@@ -1,18 +1,28 @@
 #
+#
+# tools hotkeys
+#
+#editor
+super + v
+	urxvt -e nvim
+
+super + c
+	google-chrome-stable
+
+super + e
+	thunar
+
+#
+#
 # wm independent hotkeys
 #
-
 # terminal emulator
 super + Return
 	urxvt
 
 # program launcher
 super + r
-	rofi -config=~/.config/bspwm/rofi/config.rasi -show drun
-
-#editor
-super + v
-	urxvt -e nvim
+	rofi -config ~/.config/bspwm/rofi/config.rasi -show drun
 
 
 super + control + l
@@ -20,13 +30,6 @@ super + control + l
 
 super + control + n
     sh ~/.local/bin/switch-bspwm n
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
-super + c
-	google-chrome-stable
 
 
 XF86AudioRaiseVolume
@@ -50,6 +53,12 @@ XF86AudioNext
 XF86AudioPrev
 	playerctl previous
 
+# Brighness control
+XF86MonBrightnessUp
+	light -A 5
+XF86MonBrightnessDown
+	light -U 5
+
 # Take a screenshot
 Print
 	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
@@ -62,20 +71,13 @@ alt + Print
 control + Print
 	scrot '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
-# Brighness control
-XF86MonBrightnessUp
-	light -A 5
-XF86MonBrightnessDown
-	light -U 5
-
-
 
 # restart and quit bspwm
 super + shift + Escape
 	bspc quit
 
 super + shift + r
-    	bspc wm -r
+	bspc wm -r
 
 # close and kill
 super + {_,shift + }q

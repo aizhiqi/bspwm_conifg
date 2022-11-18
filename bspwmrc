@@ -19,30 +19,5 @@ bspc config gapless_monocle      true
 bspc config paddingless_monocle      true
 unclutter --ignore-scrooling &
 
-bspc rule -a firefox desktop='^3'
-bspc rule -a Nightly desktop='^3' state=tiled
-bspc rule -a FirefoxNightly desktop='^3' state=tiled
-bspc rule -a xdman-Main state=floating
-bspc rule -a Nitrogen state=floating
-bspc rule -a Zathura state=tiled
-bspc rule -a Emacs state=tiled
-bspc rule -a Lxappearance state=floating
-bspc rule -a Xfce4-about state=floating
-bspc rule -a Steam desktop='^5' state=floating
-bspc rule -a kitty-music desktop='^4' state=pseudo_tiled
-bspc rule -a spotify desktop='^4' state=pseudo_tiled
-bspc rule -a 'VirtualBox Manager' desktop='^6' state=floating
-bspc rule -a 'VirtualBox Machine' desktop='^6'
-bspc rule -a "Qalculate-gtk" state=floating
-bspc rule -a Qq state=floating desktop='^8'
-bspc rule -a TelegramDesktop desktop='^8'
-bspc rule -a Gpick state=floating
-bspc rule -a jetbrains-toolbox state=floating
-bspc rule -a jetbrains-idea desktop='^2'
-bspc rule -a jetbrains-pycharm desktop='^2'
-bspc rule -a jetbrains-clion desktop='^2'
-bspc rule -a jetbrains-webstorm desktop='^2'
-bspc rule -a jetbrains-datagrip desktop='^2'
-bspc rule -a jetbrains-phpstorm desktop='^2'
-bspc rule -a jetbrains-studio desktop='^2'
-bspc rule -a jetbrains-goland desktop='^2'
+bspc rule -a Thunar state=floating
+bspc rule -a google-chrome-stable desktop='^2'

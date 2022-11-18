@@ -3,9 +3,10 @@ configuration {
 	width: 800;
 	lines: 10;
 	columns: 2;
-	font: "SFNS Display 14";
+	font: "SFNS Display 16";
 	show-icons: true;
 	icon-theme: "papirus";
-	theme: "~/.config/rofi/Nord.rasi";
 	display-drun: "App";
 }
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
