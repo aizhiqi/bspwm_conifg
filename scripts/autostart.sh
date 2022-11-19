@@ -4,8 +4,8 @@ xrdb -merge ~/.config/bspwm/xresources/xresources
 
 xsetroot -cursor_name left_ptr
 
-alias rofi='rofi -config=~/.config/bspwm/rofi/config.rasi -show drun'
-alias ranger='ranger --confdir=~/.config/bspwm/ranger'
+alias rofi='rofi -config ~/.config/bspwm/rofi/config.rasi -show drun'
+alias ranger='ranger --confdir ~/.config/bspwm/ranger'
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -14,7 +14,8 @@ export XMODIFIERS=@im=fcitx
 
 picom --config ~/.config/bspwm/picom/picom.conf &
 
-arr=("copyq" "fcitx" "xdman" "picom"\
+arr=("copyq" "fcitx" "xdman"\
+	"~/.config/bspwm/bin/picom"\
 	"~/.config/bspwm/bin/bspbar"\
 	"~/.config/bspwm/bin/bsphotkey"\
 	"~/.config/bspwm/bin/bspnotifier"\
@@ -32,3 +33,5 @@ do
 done
 
 xmodmap ~/.config/bspwm/xmodmap/xmodmap
+
+naiveproxy ~/.config/bspwm/naiveproxy/config.json &
