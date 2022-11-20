@@ -4,4 +4,4 @@ rofi -dmenu\
     -i\
     -no-fixed-num-lines\
     -p "Sudo Password: "\
-    -theme ~/.config/bspwm/rofi/themes/Arc-Dark.rasi
+    -theme ~/.config/bspwm/rofi/Arc-Dark.rasi

@@ -14,8 +14,8 @@ export XMODIFIERS=@im=fcitx
 
 picom --config ~/.config/bspwm/picom/picom.conf &
 
-arr=("copyq" "fcitx" "xdman"\
-	"~/.config/bspwm/bin/picom"\
+arr=("copyq" "fcitx"\
+	"~/.config/bspwm/bin/bspcomp"\
 	"~/.config/bspwm/bin/bspbar"\
 	"~/.config/bspwm/bin/bsphotkey"\
 	"~/.config/bspwm/bin/bspnotifier"\
@@ -33,5 +33,7 @@ do
 done
 
 xmodmap ~/.config/bspwm/xmodmap/xmodmap
+
+xinput --set-prop "Darfon Thinkpad X12 Detachable Gen 1 Folio case -1 Mouse" "libinput Accel Speed" 1.0
 
 naiveproxy ~/.config/bspwm/naiveproxy/config.json &
