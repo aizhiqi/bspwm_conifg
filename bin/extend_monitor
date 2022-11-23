@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+# auto add wm for new  monitor
+INTERNAL_MONITOR="eDP-1"
+
+EXTERNAL_MONITOR=$1
+if [[ $EXTERNAL_MONITOR = "" ]]; then
+    monitors=$(xrandr -q | grep " connected" | awk '{printf("%s monitor\n",$1);}')
+    EXTERNAL_MONITOR=$(dialog --menu "Select" 15 50 5 $monitors --output-fd 1)
+
+    if [[ $EXTERNAL_MONITOR = $INTERNAL_MONITOR ]]; then
+        EXTERNAL_MONITOR=""
+    fi
+fi
+
+# on first load setup default workspaces
+#if [[ "$1" = 0 ]]; then
+#  if [[ $(xrandr -q | grep "${EXTERNAL_MONITOR} connected") ]]; then
+#    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5
+#    bspc monitor "$EXTERNAL_MONITOR" -d 6 7 8 9 0
+#    bspc wm -O "$INTERNAL_MONITOR" "$EXTERNAL_MONITOR"
+#  else
+#    bspc monitor "$INTERNAL_MONITOR" -d 1 2 3 4 5 6 7 8 9 0
+#  fi
+#fi
+
+monitor_add() {
+  # Move first 5 desktops to external monitor
+  for desktop in $(bspc query -D --names -m "$INTERNAL_MONITOR" | tail -n 5); do
+    bspc desktop "$desktop" --to-monitor "$EXTERNAL_MONITOR"
+  done
+
+  # Remove default desktop created by bspwm
+  bspc desktop Desktop --remove
+
+  # reorder monitors
+  bspc wm -O "$INTERNAL_MONITOR" "$EXTERNAL_MONITOR" 
+}
+
+monitor_remove() {
+  # Add default temp desktop because a minimum of one desktop is required per monitor
+  bspc monitor "$EXTERNAL_MONITOR" -a Desktop
+
+  # Move all desktops except the last default desktop to internal monitor
+  for desktop in $(bspc query -D -m "$EXTERNAL_MONITOR");	do
+    bspc desktop "$desktop" --to-monitor "$INTERNAL_MONITOR"
+  done
+
+  # delete default desktops
+  bspc desktop Desktop --remove
+
+  # reorder desktops
+  bspc monitor "$INTERNAL_MONITOR" -o 1 2 3 4 5 6 7 8 9 0
+}
+
+if [[ $EXTERNAL_MONITOR = "" ]]; then
+  # set xrandr rules for mobile setup
+  xrandr --output "$INTERNAL_MONITOR" --primary --mode 1920x1280 --pos 0x0 --rotate normal
+  if [[ $(bspc query -D -m "${INTERNAL_MONITOR}" | wc -l) -ne 10 ]]; then
+    monitor_remove
+  fi
+else
+  # set xrandr rules for docked setup
+  xrandr --output "$INTERNAL_MONITOR" --primary --mode 1920x1280 --pos 0x0 --rotate normal --output "$EXTERNAL_MONITOR" --mode 1920x1080 --pos 1920x0 --rotate normal
+  if [[ $(bspc query -D -m "${EXTERNAL_MONITOR}" | tail -n 5) ]]; then
+    monitor_add
+  fi
+  bspc wm -O "$INTERNAL_MONITOR" "$EXTERNAL_MONITOR" 
+fi
+
+# Kill and relaunch polybar
+killall -q polybar
+while pgrep -u $UID -x polybar > /dev/null; do sleep 2; done
+if [[ $EXTERNAL_MONITOR = "" ]]; then
+  MONITOR=$INTERNAL_MONITOR polybar --reload primary -c ~/.config/bspwm/polybar/config </dev/null >/var/tmp/polybar-primary.log 2>&1 200>&- &
+else
+  MONITOR=$INTERNAL_MONITOR polybar --reload primary -c ~/.config/bspwm/polybar/config </dev/null >/var/tmp/polybar-primary.log 2>&1 200>&- &
+  MONITOR=$EXTERNAL_MONITOR polybar --reload secondary -c ~/.config/bspwm/polybar/config </dev/null >/var/tmp/polybar-secondary.log 2>&1 200>&- &
+fi

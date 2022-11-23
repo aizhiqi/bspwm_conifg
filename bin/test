@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# on first load setup default workspaces
+monitors=$(xrandr -q | grep " connected" | awk '{printf("%s monitor\n",$1);}')
+
+monitor=$(dialog --menu "Selct monitors" 15 50 5 $monitors --output-fd 1)
+
+echo $monitor
+
