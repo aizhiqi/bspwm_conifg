@@ -133,9 +133,6 @@ URxvt.matcher.button: 1
 URxvt.keysym.M-u: perl:url-select:select_next
 !! keyboard-select:
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
-!! resize-font
-URxvt.keysym.C-k:   font-size:increase
-URxvt.keysym.C-j:   font-size:decrease
 !!clipboard
 URxvt.clipboard.autocopy: true
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
