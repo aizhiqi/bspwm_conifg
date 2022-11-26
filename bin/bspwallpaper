@@ -7,5 +7,5 @@ killall -q feh
 while pgrep -u $UID -x feh >/dev/null; do sleep 1; done
 
 # Launch feh
-feh --no-fehbg --bg-scale ~/.config/bspwm/wallpaper/NordPeeks.png
+feh --no-fehbg --bg-scale ~/.config/bspwm/wallpaper/nord-arch.png
 

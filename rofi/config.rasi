@@ -9,4 +9,4 @@ configuration {
 	display-drun: "App";
 }
 
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "~/.config/bspwm/rofi/Arc-Dark.rasi"
