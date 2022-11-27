@@ -22,4 +22,3 @@ bspc rule -a Thunar state=floating
 bspc rule -a retroarch state=floating
 bspc rule -a Tlp-UI state=floating
 bspc rule -a Blueman-manager state=floating
-bspc rule -a Google-chrome desktop='^1'

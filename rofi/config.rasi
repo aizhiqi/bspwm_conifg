@@ -3,7 +3,7 @@ configuration {
 	width: 800;
 	lines: 10;
 	columns: 2;
-	font: "SFNS Display 16";
+    font: "LiterationMono Nerd Font 16";
 	show-icons: true;
 	icon-theme: "papirus";
 	display-drun: "App";
