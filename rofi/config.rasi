@@ -1,12 +1,19 @@
 configuration {
-  modi: "window,combi,ssh,drun";
-	width: 800;
-	lines: 10;
-	columns: 2;
+    modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c} · {t}";
+    width: 800;
+    lines: 10;
+    columns: 2;
     font: "LiterationMono Nerd Font 16";
-	show-icons: true;
-	icon-theme: "papirus";
-	display-drun: "App";
+    show-icons: true;
+    icon-theme: "papirus";
+    display-drun: "App";
 }
 
-@theme "~/.config/bspwm/rofi/Arc-Dark.rasi"
+@theme "~/.config/bspwm/rofi/nord.rasi"

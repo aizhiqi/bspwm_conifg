@@ -59,6 +59,9 @@ super + Return
 super + r
 	rofi -config ~/.config/bspwm/rofi/config.rasi -show drun
 
+super + l
+	rofi -config ~/.config/bspwm/rofi/config.rasi -show window
+
 
 ################################################################
 # control node state

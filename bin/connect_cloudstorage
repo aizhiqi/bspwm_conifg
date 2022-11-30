@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rclone mount nextcloud:/ ~/Nextcloud --vfs-cache-mode writes --daemon
+rclone mount google_drive:/ ~/GoogleDrive --vfs-cache-mode writes --daemon

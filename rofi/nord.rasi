@@ -15,21 +15,21 @@
     selected-normal-foreground:  @background;
     selected-normal-background:  @focus;
     alternate-normal-foreground: @foreground;
-    alternate-normal-background: rgba ( 64, 69, 82, 59 % );
+    alternate-normal-background: #3B4252;
 
-    active-foreground:           rgba ( 101, 172, 255, 100 % );
-    active-background:           rgba ( 29, 31, 33, 17 % );
-    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
-    selected-active-background:  rgba ( 68, 145, 237, 100 % );
-    alternate-active-background: rgba ( 75, 81, 96, 89 % );
-    alternate-active-foreground: @active-foreground;
+    active-foreground:           @foreground;
+    active-background:           @background;
+    selected-active-foreground:  @background;
+    selected-active-background:  @focus;
+    alternate-active-foreground: @foreground;
+    alternate-active-background: #3B4252;
 
-    urgent-foreground:           rgba ( 204, 102, 102, 100 % );
-    urgent-background:           rgba ( 29, 31, 33, 17 % );
-    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
-    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
-    alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
-    alternate-urgent-foreground: @urgent-foreground;
+    urgent-foreground:           @foreground;
+    urgent-background:           @background;
+    selected-urgent-foreground:  @background;
+    selected-urgent-background:  @focus;
+    alternate-urgent-foreground: @foreground;
+    alternate-urgent-background: #3B4252;
 
     border-color:                @focus;
     separatorcolor:              @focus;
@@ -45,7 +45,7 @@ mainbox {
     padding: 0;
 }
 message {
-    border:       2px 0px 0px ;
+    border:       1px 0px 0px ;
     border-color: @separatorcolor;
     padding:      1px ;
 }
@@ -54,11 +54,11 @@ textbox {
 }
 listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border:       1px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing:      1px ;
     scrollbar:    true;
-    padding:      2px 0px 0px ;
+    padding:      0px 0px 0px ;
 }
 element {
     border:  0;
@@ -105,17 +105,23 @@ element.alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        4px ;
+    width:        2px ;
     border:       0;
     handle-color: @normal-foreground;
     handle-width: 8px ;
     padding:      0;
 }
 mode-switcher {
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
 }
 button {
+    padding:                     0px 10px;
+    border:                      0px solid;
+    border-color:                @focus;
+    background-color:            @background;
+    text-color:                  inherit;
+    cursor:                      pointer;
     spacing:    0;
     text-color: @normal-foreground;
 }
@@ -126,7 +132,7 @@ button.selected {
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    1px ;
+    padding:    10px ;
 }
 case-indicator {
     spacing:    0;
@@ -141,11 +147,11 @@ prompt {
     text-color: @normal-foreground;
 }
 inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator,mode-switcher ];
 }
 textbox-prompt-colon {
     expand:     false;
     str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0px 0px 0px;
     text-color: @normal-foreground;
 }
