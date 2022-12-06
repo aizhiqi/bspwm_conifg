@@ -8,7 +8,7 @@
     foreground:                  #D8DEE9;
     background:                  #2E3440;
     background-color:            rgba ( 0, 0, 0, 0 % );
-    focus:                       #A3BE8C;
+    focus:                       #98C379;
 
     normal-foreground:           @foreground;
     normal-background:           @background;
