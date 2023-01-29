@@ -44,9 +44,6 @@ control + Print
 ################################################################
 #launcher
 ################################################################
-super + v
-	urxvt -e nvim
-
 super + c
 	google-chrome-stable
 
@@ -54,7 +51,7 @@ super + e
 	thunar
 
 super + Return
-	urxvt
+	kitty -c ~/.config/bspwm/kitty/nord.conf
 
 super + r
 	rofi -config ~/.config/bspwm/rofi/config.rasi -show drun
