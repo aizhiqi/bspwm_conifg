@@ -51,7 +51,7 @@ super + e
 	thunar
 
 super + Return
-	kitty -c ~/.config/bspwm/kitty/nord.conf
+	GTK_IM_MODULE=ibus kitty -c ~/.config/bspwm/kitty/nord.conf
 
 super + r
 	rofi -config ~/.config/bspwm/rofi/config.rasi -show drun
@@ -82,6 +82,10 @@ super + y
 # mark node
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
+# rotate 90
+super + ctrl + r 
+  bspc node @parent -R 90
 
 
 ################################################################
@@ -167,9 +171,6 @@ super + ctrl + shift + space
 ################################################################
 super + ctrl + Escape
 	bspc quit
-
-super + ctrl + r
-	bspc wm -r
 
 super + ctrl + q
 	betterlockscreen -l
