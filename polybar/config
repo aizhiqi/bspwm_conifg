@@ -123,7 +123,7 @@ interval = 0.5
 ;   <ramp-coreload>
 ;;format = <label> <ramp-coreload>
 format = <label>
-format-prefix = 
+format-prefix = 
 format-prefix-font = 2
 format-prefix-foreground = ${color.YELLOW}
 format-background = ${color.BACKGROUND}
@@ -164,7 +164,7 @@ interval = 3
 format = <label>
 format-background = ${color.BACKGROUND}
 
-format-prefix = ﬙
+format-prefix = 
 format-prefix-font = 2
 format-prefix-foreground = ${color.BLUE}
 
@@ -232,7 +232,7 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 
 format-muted = <label-muted>
-format-muted-prefix = 婢
+format-muted-prefix = 󰖁
 format-muted-prefix-font = 2
 format-muted-prefix-foreground = ${color.RED}
 
@@ -240,16 +240,16 @@ label-volume = %percentage%%
 label-muted = " Muted"
 label-muted-foreground = #757575
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奄
-ramp-volume-2 = 奄
-ramp-volume-3 = 奔
-ramp-volume-4 = 奔
-ramp-volume-5 = 奔
-ramp-volume-6 = 墳
-ramp-volume-7 = 墳
-ramp-volume-8 = 墳
-ramp-volume-9 = 墳
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰕿
+ramp-volume-2 = 󰕿
+ramp-volume-3 = 󰕿
+ramp-volume-4 = 󰖀
+ramp-volume-5 = 󰖀
+ramp-volume-6 = 󰖀
+ramp-volume-7 = 󰕾
+ramp-volume-8 = 󰕾
+ramp-volume-9 = 󰕾
 ramp-volume-font = 2
 ramp-volume-foreground = ${color.BLUE}
 
@@ -267,16 +267,16 @@ format = <ramp> <label>
 
 label = %percentage%%
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
-ramp-7 = 
-ramp-8 = 
-ramp-9 = 
+ramp-0 = 󰹐
+ramp-1 = 󱩎
+ramp-2 = 󱩏
+ramp-3 = 󱩐
+ramp-4 = 󱩑
+ramp-5 = 󱩒
+ramp-6 = 󱩓
+ramp-7 = 󱩔
+ramp-8 = 󱩕
+ramp-9 = 󱩖
 ramp-font = 2
 ramp-foreground = ${color.MAGENTA}
 
@@ -513,18 +513,18 @@ unknown-as-up = true
 format-connected = <label-connected>
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = "睊 "
+format-disconnected-prefix = "󰖪"
 format-disconnected-prefix-font = 2
 format-disconnected-prefix-foreground = ${color.RED}
 
 label-connected = " %downspeed%"
 label-disconnected = Disconnected
 
-ramp-signal-0 = 直
-ramp-signal-1 = 直
-ramp-signal-2 = 直
-ramp-signal-3 = 直
-ramp-signal-4 = 直
+ramp-signal-0 = 󰢿
+ramp-signal-1 = 󰢼
+ramp-signal-2 = 󰢽
+ramp-signal-3 = 󰢾
+ramp-signal-4 = 󰢾
 ramp-signal-font = 2
 ramp-signal-foreground = ${color.CYAN}
 
