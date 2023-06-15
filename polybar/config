@@ -518,7 +518,7 @@ format-disconnected-prefix-font = 2
 format-disconnected-prefix-foreground = ${color.RED}
 
 label-connected = " %downspeed%"
-label-disconnected = 󰌙 
+label-disconnected = "" 
 
 ramp-signal-0 = 󰢿
 ramp-signal-1 = 󰢼
